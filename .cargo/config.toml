@@ -1,0 +1,14 @@
+[build]
+target = "loongarch32-unknown-none-softfloat"
+
+[target.loongarch32-unknown-none]
+runner = "qemu-system-loongarch64 -display none -machine virt -cpu la132 -m 4G -serial stdio -kernel"
+rustflags = [
+    "-C", "link-arg=--image-base=0x200000"
+]
+
+[target.loongarch32-unknown-none-softfloat]
+runner = "qemu-system-loongarch64 -display none -machine virt -cpu la132 -m 4G -serial stdio -kernel"
+rustflags = [
+    "-C", "link-arg=--image-base=0x200000"
+]
